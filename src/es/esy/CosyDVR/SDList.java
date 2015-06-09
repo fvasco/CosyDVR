@@ -59,8 +59,11 @@ public class SDList {
 		} else {
 			//default when no vold.fstab file at all
 			sVold.add("/mnt/sdcard");
-			sVold.add("/storage/sdcard0");
-			sVold.add("/storage/sdcard1");
+			// add all available path in storage folder
+			final File[] storageFiles = new File("/storage").listFiles();
+			for (int i = 0; i < storageFiles.length; ++i) {
+				sVold.add(storageFiles[i].getAbsolutePath());
+			}
 		}
 	}
 
