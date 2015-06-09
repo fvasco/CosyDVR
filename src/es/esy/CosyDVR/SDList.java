@@ -57,7 +57,10 @@ public class SDList {
 				e.printStackTrace();
 			}
 		} else {
-			sVold.add("/mnt/sdcard");	//default when no vold.fstab file at all
+			//default when no vold.fstab file at all
+			sVold.add("/mnt/sdcard");
+			sVold.add("/storage/sdcard0");
+			sVold.add("/storage/sdcard1");
 		}
 	}
 
